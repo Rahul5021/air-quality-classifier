@@ -15,6 +15,7 @@ from src.utils import save_object
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path = os.path.join('artifacts','preprocessor.pkl')
+    label_encoder_file_path = os.path.join('artifacts', 'label_encoder.pkl')
 
 class DataTransformation:
     def __init__(self):
@@ -35,9 +36,6 @@ class DataTransformation:
                 "CO",
                 "Proximity_to_Industrial_Areas",
                 "Population_Density",
-                "weighted_pollution",
-                "pm_fine_ratio",
-                "population_exposure"
             ]
             num_pipeline = Pipeline(
                 steps=[
@@ -100,10 +98,16 @@ class DataTransformation:
                 file_path = self.data_transformation_config.preprocessor_obj_file_path,
                 obj = preprocessor
             )
+            # Save the LabelEncoder object
+            save_object(
+                file_path=self.data_transformation_config.label_encoder_file_path,
+                obj=le
+            )
             return(
                 train_arr, 
                 test_arr,
-                self.data_transformation_config.preprocessor_obj_file_path
+                self.data_transformation_config.preprocessor_obj_file_path,
+                self.data_transformation_config.label_encoder_file_path
             )
         except Exception as e:
             raise CustomException(e,sys)

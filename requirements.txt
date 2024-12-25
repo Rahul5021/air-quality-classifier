@@ -6,4 +6,5 @@ plotly
 nbformat
 scikit-learn
 dill
+flask
 #-e .

@@ -52,6 +52,6 @@ if __name__ == "__main__":
     obj = DataIngestion()
     train_path, test_path = obj.inititate_data_ingestion()
     data_transformation = DataTransformation()
-    train_arr, test_arr,_ = data_transformation.initiate_data_transformation(train_path, test_path)
+    train_arr, test_arr,_,_ = data_transformation.initiate_data_transformation(train_path, test_path)
     model_trainer = ModelTrainer()
     print(model_trainer.initiate_model_trainer(train_arr,test_arr))
