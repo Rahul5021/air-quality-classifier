@@ -5,4 +5,5 @@ matplotlib
 plotly
 nbformat
 scikit-learn
+dill
 #-e .
