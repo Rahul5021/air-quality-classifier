@@ -34,8 +34,19 @@ class ModelTrainer:
                         "Decision Tree": DecisionTreeClassifier(),
                         "Random Forest": RandomForestClassifier(),
                     }
+            params = {
+                        "Logistic Regression": {
+                            'max_iter': [100, 200, 500],  # Ensure convergence for larger datasets
+                        },
+                        "Decision Tree": {
+                            'criterion': ['gini', 'entropy', 'log_loss'],  # Include all supported criteria
+                        },
+                        "Random Forest": {
+                            'n_estimators': [50, 100, 200, 500],  # Number of trees in the forest
+                        },
+                    }
             
-            model_report:dict = evaluate_model(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models)
+            model_report:dict = evaluate_model(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models,param = params)
 
             #getting best model score from dict
             best_model_score = max(model_report.values())
