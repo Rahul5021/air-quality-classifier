@@ -34,7 +34,6 @@ class DataTransformation:
                 "NO2",
                 "SO2",
                 "CO",
-                "Proximity_to_Industrial_Areas",
                 "Population_Density",
             ]
             num_pipeline = Pipeline(

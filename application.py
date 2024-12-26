@@ -28,7 +28,6 @@ def predict_datapoint():
             no2=request.form.get('no2'),
             so2=request.form.get('so2'),
             co=request.form.get('co'),
-            proximity=request.form.get('proximity'),
             population_density=request.form.get('population_density')
         )
         pred_df = data.get_data_as_dataframe()
