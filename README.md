@@ -5,12 +5,12 @@ This web app is a demonstration project that classifies the air quality of a giv
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Technologies Used](#technologies-used)
-- [Project Structure]
-- [Setup and Instalaltion]
-- [Usage]
-- [File Descriptions]
-- [Model Training and Evaluation]
-- [License]
+- [Project Structure](#project-structure)
+- [Setup and Instalaltion](#setup-and-installation)
+- [Usage](#usage)
+- [File Descriptions](#file-descriptions)
+- [Model Training and Evaluation](#model-training-and-evaluation)
+- [License](#license)
 
 ## Project Overview
 
@@ -26,5 +26,88 @@ This web application allows users to input air quality data (such as temperature
 - **Pandas**: For data manipulation and analysis.
 - **NumPy**: For numerical computations.
 - **Matplotlib and Seaborn**: For data visualization.
+
+## Project Structure
+
+```bash
+air-quality-classification/
+├── notebook/
+│   ├── data/
+│   │   └── air_quality_metrics.csv
+│   ├── eda.ipynb
+│   └── model trainer.ipynb
+├── src/
+│   ├── __init__.py
+│   ├── components/
+│   │   ├── __init__.py
+│   │   ├── data_ingestion.py
+│   │   ├── data_transformation.py
+│   │   └── model_training.py
+│   ├── pipeline/
+│   │   ├── __init__.py
+│   │   ├── predict_pipeline.py
+│   │   └── training_pipeline.py
+│   ├── logger.py
+│   ├── exception.py
+│   └── utils.py
+├── template/
+│   └── index.html
+├── static/
+│   ├── script.js
+│   └── style.css
+├── app.py
+├── setup.py
+├── .gitignore
+├── requirements.txt
+├── Dockerfile
+└── README.md
+```
+
+## Setup and Installation
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/rahul5021/air-quality-classification.git
+cd air-quality-classification
+```
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+## Running the Application
+
+### 1. Run the Flask application
+```bash
+python app.py
+```
+The app will be available at `http://127.0.0.1:5000/`.
+
+## Usage
+
+- Open the app in your browser.
+- Select the location.
+- Click on the predict button to get the air quality classification.
+
+## File Descriptions
+- `app.py`: The main application file that runs the Flask server.
+- `data_ingestion.py`: Responsible for loading and splitting the dataset into training and test sets.
+- `data_transfomation.py`: Performs data preprocessing, including scaling and encoding.
+- `model_training.py`: Contains the logic for training different machine learning models and selecting the best one based on accuracy.
+- `requirements.txt`: Contains all the Python libraries required to run the project.
+- `setup.py`: Script to install the project as a package.
+- `logger.py`: Custom logger for logging events and errors.
+- `utils.py`: Utility functions for data manipulation and evaluating model.
+- `exception.py`: Custom exceptions for handling errors.
+
+## Model Training and Evaluation
+The project uses the following models for classification:
+- **Random Forest Classifier**
+- **Decision Tree**
+
+The models are evaluated based on accuracy, and the best-performing model is selected for deployment. The performance of the model is tested using a holdout test set, and accuracy metrics are logged.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](#license) file for details.
 
 
