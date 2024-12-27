@@ -5,7 +5,6 @@ This web app is a demonstration project that classifies the air quality of a giv
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
 - [Setup and Instalaltion](#setup-and-installation)
 - [Usage](#usage)
 - [File Descriptions](#file-descriptions)
@@ -26,42 +25,6 @@ This web application allows users to input air quality data (such as temperature
 - **Pandas**: For data manipulation and analysis.
 - **NumPy**: For numerical computations.
 - **Matplotlib and Seaborn**: For data visualization.
-
-## Project Structure
-
-```bash
-air-quality-classification/
-├── notebook/
-│   ├── data/
-│   │   └── air_quality_metrics.csv
-│   ├── eda.ipynb
-│   └── model trainer.ipynb
-├── src/
-│   ├── __init__.py
-│   ├── components/
-│   │   ├── __init__.py
-│   │   ├── data_ingestion.py
-│   │   ├── data_transformation.py
-│   │   └── model_training.py
-│   ├── pipeline/
-│   │   ├── __init__.py
-│   │   ├── predict_pipeline.py
-│   │   └── training_pipeline.py
-│   ├── logger.py
-│   ├── exception.py
-│   └── utils.py
-├── template/
-│   └── index.html
-├── static/
-│   ├── script.js
-│   └── style.css
-├── app.py
-├── setup.py
-├── .gitignore
-├── requirements.txt
-├── Dockerfile
-└── README.md
-```
 
 ## Setup and Installation
 
