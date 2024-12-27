@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Air Quality Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Welcome</h1>
+    <div class="form-container">
+        <img src="https://img.icons8.com/fluency/96/air-quality.png" alt="Air Quality Icon" class="mb-3">
+        <h1>Check Air Quality</h1>
+        <p>Enter your location to know the air quality of your area.</p>
+        <form id="locationForm">
+            <div class="mb-3 position-relative">
+                <input type="text" class="form-control" id="location" placeholder="Type your location" autocomplete="off" required>
+                <ul id="suggestions" class="d-none"></ul>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Fetch Prediction</button>
+        </form>
+        <div id="responseDiv" class="mt-3"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

@@ -30,21 +30,25 @@ class ModelTrainer:
                 test_arr[:,-1]
             )
             models = {
-                        "Logistic Regression": LogisticRegression(),
                         "Decision Tree": DecisionTreeClassifier(),
                         "Random Forest": RandomForestClassifier(),
                     }
             params = {
-                        "Logistic Regression": {
-                            'max_iter': [100, 200, 500],  # Ensure convergence for larger datasets
-                        },
                         "Decision Tree": {
-                            'criterion': ['gini', 'entropy', 'log_loss'],  # Include all supported criteria
+                            'criterion': ['gini', 'entropy'],
+                            'max_depth': [5, 10, 15],
+                            'min_samples_split': [2, 5, 10],
+                            'min_samples_leaf': [1, 2, 5],
                         },
                         "Random Forest": {
-                            'n_estimators': [50, 100, 200, 500],  # Number of trees in the forest
+                            'n_estimators': [50, 100],
+                            'max_depth': [5, 10],
+                            'min_samples_split': [2, 5],
+                            'min_samples_leaf': [1, 2],
+                            'max_features': ['sqrt', 'log2'],
                         },
                     }
+
             
             model_report:dict = evaluate_model(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models,param = params)
 

@@ -34,7 +34,6 @@ class DataTransformation:
                 "NO2",
                 "SO2",
                 "CO",
-                "Population_Density",
             ]
             num_pipeline = Pipeline(
                 steps=[

@@ -1,0 +1,80 @@
+/* Global Styles */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #a8dadc, #457b9d);
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Form Container */
+.form-container {
+    text-align: center;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+.form-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #457b9d;
+}
+.form-container p {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+}
+.form-container .btn {
+    background-color: #1d3557;
+    border: none;
+}
+.form-container .btn:hover {
+    background-color: #457b9d;
+}
+
+/* Suggestions Dropdown */
+#suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #ffffff;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+#suggestions li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    color: #333333;
+}
+#suggestions li:hover {
+    background: #457b9d; /* Matches the primary theme color */
+    color: #ffffff;
+}
+#suggestions li + li {
+    border-top: 1px solid #ddd; /* Separator for list items */
+}
+#responseDiv {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: black;
+    margin-top: 20px;
+}
+
+.alert {
+    margin-top: 10px;
+}

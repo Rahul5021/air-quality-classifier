@@ -7,4 +7,6 @@ nbformat
 scikit-learn
 dill
 flask
+python-dotenv
+requests
 #-e .

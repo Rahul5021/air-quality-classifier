@@ -39,8 +39,7 @@ class CustomData:
             pm10: float,
             no2: float,
             so2: float,
-            co: float,
-            population_density: float,   
+            co: float,  
         ):
         self.temperature = temperature
         self.humidity = humidity
@@ -49,7 +48,6 @@ class CustomData:
         self.no2 = no2
         self.so2 = so2
         self.co = co
-        self.population_density = population_density
 
     def get_data_as_dataframe(self):
         try:
@@ -61,7 +59,6 @@ class CustomData:
                 "NO2": [self.no2],
                 "SO2": [self.so2],
                 "CO": [self.co],
-                "Population_Density": [self.population_density],
             }
             return pd.DataFrame(custom_data_input_dict)
         except Exception as e:
