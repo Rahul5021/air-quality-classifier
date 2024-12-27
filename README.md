@@ -3,7 +3,7 @@
 This web app is a demonstration project that classifies the air quality of a given location based on various air quality metrics like PM2.5, PM10, NO2, SO2, CO, and others. The app is built using Flask and aims to showcase an end-to-end machine learning pipeline, including data ingestion, transformation, model training, and prediction.
 
 ## Table of Contents
-- Project Overview
+- Project Overview(#Project Overview)
 - Technologies Used
 - Project Structure
 - Setup and Instalaltion
