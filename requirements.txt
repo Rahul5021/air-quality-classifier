@@ -9,4 +9,4 @@ dill
 flask
 python-dotenv
 requests
-#-e .
+-e .
